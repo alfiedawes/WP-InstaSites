@@ -221,7 +221,7 @@ else{
 	<input type="hidden" id="headlinesearch" name="headlinesearch" data-prevalue="BAPI.config().headline.enabled=" value="" />
 	</td>	
 </tr>
-<tr valign="top">
+<tr valign="top" style="display:none;">
 	<td scope="row">Max Rate Search:</td>
 	<td><input class="maxratesearch-cbx" type="checkbox" checked="" />
 	<input type="hidden" id="maxratesearch" name="maxratesearch" data-prevalue="BAPI.config().rate.enabled=" value="" />
