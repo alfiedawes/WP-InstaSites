@@ -336,7 +336,7 @@
 		$url = strtolower($url);
 		$url = substr($url, 0, 8);
 		
-		if ($url == "/img.php") {
+		if ($url == "/img.php" || $url == "/img.svc") {
 			include('thumbs/timthumb.php');
 			exit();
 		}
