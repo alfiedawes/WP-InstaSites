@@ -9,6 +9,8 @@
 			wp_die('Error activating Kigo Sites plugin');
 		}
 
+		kigo_I18n::update_i18n_network_option();
+
 		add_site_option( 'wp_plugin_kigo_sites_current_version', KIGO_PLUGIN_VERSION );
 	}
 
@@ -500,12 +502,12 @@
 		return $language;	
 	}
 	
-	function kigo_get_site_language() {
+	function kigo_get_site_language() { 
 		if(
 			!is_array( $solution_data = BAPISync::getSolutionData() ) ||
 			!is_array( $solution_data[ 'Site' ] ) ||
 			!is_string( $solution_data[ 'Site' ][ 'Language' ] )
-		) {
+		) { 
 			Loggly_logs::log( array( 'msg' => 'Unable to retrieve site language from solution data.', 'blog_id' => get_current_blog_id() ) );
 			return 'en-US';
 		}
