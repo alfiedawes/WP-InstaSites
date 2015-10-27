@@ -50,6 +50,18 @@ class Kigo_Translations_List_Table extends WP_List_Table {
 
 		return true;
 	}
+        
+        /**
+         * The parent function is private now so we need our own version here.
+         * @return array
+         */
+        function get_columns() {
+            $columns = array(
+                    'name' => 'Name',
+                    'subject' => 'Subject'
+                    );
+            return $columns;
+        }
 
 	/**
 	 * Specific rendering for the column value
