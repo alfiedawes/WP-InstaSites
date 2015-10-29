@@ -1547,3 +1547,13 @@ function kigo_disable_quick_edit( $actions ) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	add_action( 'wp_insert_post',  'save_seo_meta');
 }
+
+// To hide update notifications to non-admin users
+function hide_update_notice_to_non_admin_users()
+{
+   if(!is_super_admin() )
+    {
+       remove_action( 'admin_notices', 'update_nag', 3 );
+	   remove_action( 'network_admin_notices', 'update_nag', 3 );
+    }
+}
